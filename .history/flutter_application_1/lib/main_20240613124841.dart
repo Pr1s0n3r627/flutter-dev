@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Centered Image with Audio',
       home: MyHomePage(),
     );
@@ -18,10 +16,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
   @override
-  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -48,7 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: InkWell(
           onTap: () {
             // Play audio when image is tapped
-            audioPlayer.play(AssetSource("assets/vine_boom.mp3"));
+            audioPlayer.play(Uri.parse('assets/low_quality_gangam_style.mp3')
+                .toString() as SourceType);
           },
           child: Image.asset(
             'assets/iconic.png',

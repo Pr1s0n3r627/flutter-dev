@@ -6,22 +6,21 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Centered Image with Audio',
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -48,7 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: InkWell(
           onTap: () {
             // Play audio when image is tapped
-            audioPlayer.play(AssetSource("assets/vine_boom.mp3"));
+            audioPlayer.play('assets/low_quality_gangam_style.mp3',
+                isLocal: true);
           },
           child: Image.asset(
             'assets/iconic.png',

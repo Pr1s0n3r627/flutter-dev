@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: InkWell(
           onTap: () {
             // Play audio when image is tapped
-            audioPlayer.play(AssetSource("assets/vine_boom.mp3"));
+            audioPlayer.play('assets/low_quality_gangam_style.mp3' as Source);
           },
           child: Image.asset(
             'assets/iconic.png',
